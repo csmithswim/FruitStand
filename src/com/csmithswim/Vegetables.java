@@ -1,2 +1,4 @@
-package com.csmithswim;public class Vegetables {
+package com.csmithswim;
+
+public class Vegetables extends Product {
 }

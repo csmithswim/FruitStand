@@ -25,7 +25,14 @@ Create a customer/purchase class and have the store keep track of purchase histo
 public class Main {
 
     public static void main(String[] args) {
-        
-	// write your code here
+        Console console = new Console();
+
+        Store store = new Store();
+        Fruit fruit = new Fruit();
+
+        store.products.add(fruit);
+
+        console.getString("What items do you wish to add to the store?");
+
     }
 }
