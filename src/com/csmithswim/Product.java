@@ -1,9 +1,9 @@
 package com.csmithswim;
 
-public class Product {
-    public int price;
-
-
+abstract class Product {
+    private int price;
+    private String name;
+    private String sku;
 
 
 

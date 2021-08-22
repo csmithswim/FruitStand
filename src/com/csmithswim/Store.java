@@ -11,12 +11,25 @@ public class Store {
         return balance;
     }
 
-    @Override
-    public String toString() {
-       StringBuilder output = new StringBuilder();
-       for (Product e : products) {
-           output.append(e + " ");
-       }
-       return new String(output);
+    public List<Product> addFruit(Fruit fruit) {
+        products.add(fruit);
+        return products;
     }
+    public List<Product> addVegetable(Vegetable vegetable) {
+        products.add(vegetable);
+        return products;
+    }
+
+    public String printInventory(List<Fruit> fruit, List<Vegetable> vegetables) {
+        StringBuilder output = new StringBuilder();
+
+        //loop through products and append to output.
+        for (Product e : products) {
+
+            output.append(e.getName());
+        }
+
+        return output.toString();
+    }
+
 }

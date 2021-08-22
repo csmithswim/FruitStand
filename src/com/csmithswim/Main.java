@@ -28,11 +28,18 @@ public class Main {
         Console console = new Console();
 
         Store store = new Store();
-        Fruit fruit = new Fruit();
 
-        store.products.add(fruit);
+        Fruit fruit = new Fruit(5_00, "apple");
+        Vegetable vegetable = new Vegetable(3_00, "carrot");
 
-        console.getString("What items do you wish to add to the store?");
+        store.addFruit(fruit);
+        store.addVegetable(vegetable);
+
+        store.printInventory(store.products);
+
+
+
+//        console.getString("What items do you wish to add to the store?");
 
     }
 }
