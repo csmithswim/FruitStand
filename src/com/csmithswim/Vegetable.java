@@ -2,7 +2,7 @@ package com.csmithswim;
 
 public class Vegetable extends Product {
 
-    public Vegetable(int price, String name, String sku, String type) {
-        super(price, name, sku, type);
+    public Vegetable(String name, int price, int quantity, String sku) {
+        super(price, name, sku);
     }
 }

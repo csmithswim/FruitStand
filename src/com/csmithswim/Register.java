@@ -2,7 +2,7 @@ package com.csmithswim;
 
 public interface Register {
     //add products to inventory
-    void stockProduct();
+    void stockProduct(String[] product);
 
     //add products to priceList
     void catalog();
