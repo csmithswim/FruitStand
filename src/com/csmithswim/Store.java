@@ -9,24 +9,25 @@ public class Store implements Register {
     private long balance;
 
     //HashMap to store how many products there are in the store.
-    private HashMap<String, Integer> inventory;
+    private HashMap<String, Integer> inventory = new HashMap<>();
 
     @Override
     public void stockProduct(String[] product) {
+        System.out.println(product[0]);
         String productName = product[0];
         int quantity = Integer.parseInt(product[1]);
-        StringBuilder message = new StringBuilder(quantity + " " + product + " added to inventory.");
+        StringBuilder message = new StringBuilder(quantity + " " + productName + " added to inventory.\n");
         if (quantity > 1 ) {
-            message.replace(productName.length(), productName.length()+1, "s");
+            message.replace(productName.length() + 2, productName.length() + 3, "(s) ");
         }
-
-
         if (inventory.containsKey(productName)) {
             inventory.put(productName, inventory.get(productName) + quantity);
         }
-        if (!inventory.containsKey(product)) {
+        else if (!inventory.containsKey(productName)) {
             inventory.put(productName, quantity);
         }
+
+        System.out.println(inventory);
         System.out.println(message);
     }
 

@@ -7,10 +7,12 @@ public class PointOfSale {
     Console console = new Console();
 
     public void run() {
+        System.out.print("Welcome to Hell Foods.\n");
         Store store = new Store("Hell Foods", 1, "420 In Your Dreams Lane, Providence, Rhode Island, 02906", 150_00);
         boolean exitNumber = true;
 
-        String choice = console.greetUser();
+        while (exitNumber) {
+            String choice = console.getOption();
 
         /* Greet user, display options [STOCK, SELL, RECYCLE, EXIT].
             if STOCK
@@ -23,17 +25,16 @@ public class PointOfSale {
 
             if RECYCLE
         */
-        if (choice.equalsIgnoreCase("STOCK")) {
-            console.getStockSelection();
-
+            if (choice.equalsIgnoreCase("STOCK")) {
+                store.stockProduct(console.getStockSelection());
+            continue;
+            }
+            if (choice.equalsIgnoreCase("EXIT")) {
+                System.out.println("\nGoodbye and have a GREAT DAY!");
+                exitNumber = false;
+            }
         }
-        if (choice.equalsIgnoreCase("EXIT")) {
-            System.out.println("\nGoodbye and have a GREAT DAY!");
-            exitNumber = false;
-        }
 
-
-        while (exitNumber);
     }
 }
 
