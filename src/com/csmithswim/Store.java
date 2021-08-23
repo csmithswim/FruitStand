@@ -1,35 +1,31 @@
 package com.csmithswim;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Store {
-    public int balance;
-    List<Product> products = new ArrayList<>();
+    private String name;
+    private int employees;
+    private String address;
+    private long balance;
 
-    public int getBalance() {
-        return balance;
+    //HashMap to store SKU/prices
+    private HashMap<String, Long> priceList;
+
+    //HashMap to store how many products there are in the store.
+    private HashMap<String, Long> inventory;
+
+    //Constructor
+    public Store(String name, int employees, String address, long balance) {
+        this.name = name;
+        this.employees = employees;
+        this.address = address;
+        this.balance = balance;
+
+        HashMap<String, Long> priceList = new HashMap<>();
+        HashMap<String, Long> inventory = new HashMap<>();
     }
-
-    public List<Product> addFruit(Fruit fruit) {
-        products.add(fruit);
-        return products;
-    }
-    public List<Product> addVegetable(Vegetable vegetable) {
-        products.add(vegetable);
-        return products;
-    }
-
-    public String printInventory(List<Fruit> fruit, List<Vegetable> vegetables) {
-        StringBuilder output = new StringBuilder();
-
-        //loop through products and append to output.
-        for (Product e : products) {
-
-            output.append(e.getName());
-        }
-
-        return output.toString();
-    }
-
 }
+
+
+
+
